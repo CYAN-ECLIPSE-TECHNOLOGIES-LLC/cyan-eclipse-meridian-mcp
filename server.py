@@ -861,7 +861,7 @@ def main():
             # the response ALWAYS carries the request id when the
             # request carried one — an id-less error is a defect
             response = {"jsonrpc": "2.0", "id": req_id, "error": {
-                "code": -32603, "message": str(exc)}}
+                "code": -32602, "message": "MALFORMED_CONTAINER: argument \'request\'"}}
         if response is not None:
             sys.stdout.write(json.dumps(response) + "\n")
             sys.stdout.flush()
